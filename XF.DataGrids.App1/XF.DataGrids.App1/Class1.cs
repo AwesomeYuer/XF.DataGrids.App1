@@ -133,9 +133,19 @@ namespace demo
 			};
 		}
 
-		public static readonly BindableProperty OneActionProperty =
-			BindableProperty.Create<myButton, Action>(
-				p => p.OneAction, null);
+		//public static readonly BindableProperty OneActionProperty =
+		//	BindableProperty.Create<myButton, Action>(
+		//		p => p.OneAction, null);
+
+		public static readonly
+		BindableProperty
+				OneActionProperty = BindableProperty
+										.Create
+											(
+												nameof(OneAction)
+												, typeof(Action)
+												, typeof(myButton)
+											);
 
 		public Action OneAction
 		{
@@ -146,9 +156,19 @@ namespace demo
 
 	public class ColumnHeader : BindableObject
 	{
-		public static readonly BindableProperty TitleProperty =
-			BindableProperty.Create<ColumnHeader, string>(
-				p => p.Title, null);
+		//public static readonly BindableProperty TitleProperty =
+		//	BindableProperty.Create<ColumnHeader, string>(
+		//		p => p.Title, null);
+
+		public static readonly
+		BindableProperty
+		TitleProperty = BindableProperty
+								.Create
+									(
+										nameof(Title)
+										, typeof(string)
+										, typeof(ColumnHeader)
+									);
 
 		public string Title
 		{
@@ -187,9 +207,19 @@ namespace demo
 
 	public class WordPair : BindableObject
 	{
-		public static readonly BindableProperty EnglishProperty =
-			BindableProperty.Create<WordPair, string>(
-				p => p.English, null);
+		//public static readonly BindableProperty EnglishProperty =
+		//	BindableProperty.Create<WordPair, string>(
+		//		p => p.English, null);
+
+		public static readonly
+				BindableProperty
+				EnglishProperty = BindableProperty
+										.Create
+											(
+												nameof(English)
+												, typeof(string)
+												, typeof(WordPair)
+											);
 
 		public string English
 		{
@@ -197,9 +227,19 @@ namespace demo
 			set { SetValue(EnglishProperty, value); }
 		}
 
-		public static readonly BindableProperty SpanishProperty =
-			BindableProperty.Create<WordPair, string>(
-				p => p.Spanish, null);
+		//public static readonly BindableProperty SpanishProperty =
+		//	BindableProperty.Create<WordPair, string>(
+		//		p => p.Spanish, null);
+
+		public static readonly
+				BindableProperty
+				SpanishProperty = BindableProperty
+										.Create
+											(
+												nameof(Spanish)
+												, typeof(string)
+												, typeof(WordPair)
+											);
 
 		public string Spanish
 		{
@@ -207,9 +247,18 @@ namespace demo
 			set { SetValue(SpanishProperty, value); }
 		}
 
-		public static readonly BindableProperty SpanishBackgroundColorProperty =
-			BindableProperty.Create<WordPair, Color>(
-				p => p.SpanishBackgroundColor, Color.White);
+		//public static readonly BindableProperty SpanishBackgroundColorProperty =
+		//	BindableProperty.Create<WordPair, Color>(
+		//		p => p.SpanishBackgroundColor, Color.White);
+		public static readonly
+		BindableProperty
+		SpanishBackgroundColorProperty = BindableProperty
+								.Create
+									(
+										nameof(SpanishBackgroundColor)
+										, typeof(Color)
+										, typeof(WordPair)
+									);
 
 		public Color SpanishBackgroundColor
 		{
@@ -217,9 +266,21 @@ namespace demo
 			set { SetValue(SpanishBackgroundColorProperty, value); }
 		}
 
-		public static readonly BindableProperty ButtonTextProperty =
-			BindableProperty.Create<WordPair, string>(
-				p => p.ButtonText, null);
+		//public static readonly BindableProperty ButtonTextProperty =
+		//	BindableProperty.Create<WordPair, string>(
+		//		p => p.ButtonText, null);
+
+		public static readonly
+				BindableProperty
+						ButtonTextProperty = BindableProperty
+												.Create
+													(
+														nameof(ButtonText)
+														, typeof(string)
+														, typeof(WordPair)
+														//, null
+													);
+
 
 		public string ButtonText
 		{
@@ -227,9 +288,21 @@ namespace demo
 			set { SetValue(ButtonTextProperty, value); }
 		}
 
-		public static readonly BindableProperty ActionProperty =
-			BindableProperty.Create<WordPair, Action>(
-				p => p.Action, null);
+		//public static readonly BindableProperty ActionProperty =
+		//	BindableProperty.Create<WordPair, Action>(
+		//		p => p.Action, null);
+
+		public static readonly
+		BindableProperty
+				ActionProperty = BindableProperty
+										.Create
+											(
+												nameof(ButtonText)
+												, typeof(Action)
+												, typeof(WordPair)
+											//, null
+											);
+
 
 		public Action Action
 		{
@@ -237,9 +310,21 @@ namespace demo
 			set { SetValue(ActionProperty, value); }
 		}
 
-		public static readonly BindableProperty ImageNameProperty =
-			BindableProperty.Create<WordPair, string>(
-				p => p.ImageName, null);
+		//public static readonly BindableProperty ImageNameProperty =
+		//	BindableProperty.Create<WordPair, string>(
+		//		p => p.ImageName, null);
+
+
+		public static readonly
+		BindableProperty
+				ImageNameProperty = BindableProperty
+										.Create
+											(
+												nameof(ImageName)
+												, typeof(string)
+												, typeof(WordPair)
+											//, null
+											);
 
 		public string ImageName
 		{
@@ -247,9 +332,20 @@ namespace demo
 			set { SetValue(ImageNameProperty, value); }
 		}
 
-		public static readonly BindableProperty XProperty =
-			BindableProperty.Create<WordPair, int>(
-				p => p.X, 0);
+		//public static readonly BindableProperty XProperty =
+		//	BindableProperty.Create<WordPair, int>(
+		//		p => p.X, 0);
+
+		public static readonly
+		BindableProperty
+				XProperty = BindableProperty
+										.Create
+											(
+												nameof(X)
+												, typeof(int)
+												, typeof(WordPair)
+											//, null
+											);
 
 		public int X
 		{

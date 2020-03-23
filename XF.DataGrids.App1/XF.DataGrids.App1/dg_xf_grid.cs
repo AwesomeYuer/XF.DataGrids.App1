@@ -38,27 +38,57 @@ namespace Zumero
 
 	public class Column : BindableObject
 	{
-		public static readonly BindableProperty WidthProperty =
-			BindableProperty.Create<Column,double>(
-				p => p.Width, 80);
-
+		//public static readonly BindableProperty WidthProperty =
+		//	BindableProperty.Create<Column,double>(
+		//		p => p.Width, 80);
+		public static readonly
+		BindableProperty
+				WidthProperty = BindableProperty
+										.Create
+											(
+												nameof(Width)
+												, typeof(double)
+												, typeof(Column)
+											//, null
+											);
 		public double Width {
 			get { return (double)GetValue(WidthProperty); }
 			set { SetValue(WidthProperty, value); } // TODO disallow invalid values
 		}
 
-		public static readonly BindableProperty TemplateProperty =
-			BindableProperty.Create<Column,DataTemplate>(
-				p => p.Template, null);
+		//public static readonly BindableProperty TemplateProperty =
+		//	BindableProperty.Create<Column,DataTemplate>(
+		//		p => p.Template, null);
+
+		public static readonly
+		BindableProperty
+		TemplateProperty = BindableProperty
+								.Create
+									(
+										nameof(Template)
+										, typeof(DataTemplate)
+										, typeof(Column)
+									//, null
+									);
 
 		public DataTemplate Template {
 			get { return (DataTemplate)GetValue(TemplateProperty); }
 			set { SetValue(TemplateProperty, value); }
 		}
 
-		public static readonly BindableProperty HeaderViewProperty =
-			BindableProperty.Create<Column,View>(
-				p => p.HeaderView, null);
+		//public static readonly BindableProperty HeaderViewProperty =
+		//	BindableProperty.Create<Column,View>(
+		//		p => p.HeaderView, null);
+		public static readonly
+BindableProperty
+HeaderViewProperty = BindableProperty
+						.Create
+							(
+								nameof(HeaderView)
+								, typeof(View)
+								, typeof(Column)
+							//, null
+							);
 
 		public View HeaderView {
 			get { return (View)GetValue(HeaderViewProperty); }
@@ -1216,72 +1246,163 @@ namespace Zumero
 			}
 		}
 
-		public static readonly BindableProperty RowHeightProperty =
-			BindableProperty.Create<DataGrid,double>(
-				p => p.RowHeight, 50);
+		//public static readonly BindableProperty RowHeightProperty =
+		//	BindableProperty.Create<DataGrid,double>(
+		//		p => p.RowHeight, 50);
 
-		public double RowHeight {
+		public static readonly
+		BindableProperty
+				RowHeightProperty = BindableProperty
+										.Create
+											(
+												nameof(RowHeight)
+												, typeof(double)
+												, typeof(DataGrid)
+												//, 50
+											);
+
+		public double RowHeight
+		{
 			get { return (double)GetValue(RowHeightProperty); }
 			set { SetValue(RowHeightProperty, value); } // TODO disallow invalid values
 		}
 
-		public static readonly BindableProperty RowSpacingProperty =
-			BindableProperty.Create<DataGrid,double>(
-				p => p.RowSpacing, 2);
+		//public static readonly BindableProperty RowSpacingProperty =
+		//	BindableProperty.Create<DataGrid,double>(
+		//		p => p.RowSpacing, 2);
+		public static readonly
+		BindableProperty
+				RowSpacingProperty = BindableProperty
+										.Create
+											(
+												nameof(RowSpacing)
+												, typeof(double)
+												, typeof(DataGrid)
+											//, 50
+											);
 
 		public double RowSpacing {
 			get { return (double)GetValue(RowSpacingProperty); }
 			set { SetValue(RowSpacingProperty, value); } // TODO disallow invalid values
 		}
 
-		public static readonly BindableProperty ColumnSpacingProperty =
-			BindableProperty.Create<DataGrid,double>(
-				p => p.ColumnSpacing, 2);
+
+		public static readonly
+		BindableProperty
+				ColumnSpacingProperty = BindableProperty
+										.Create
+											(
+												nameof(ColumnSpacing)
+												, typeof(double)
+												, typeof(DataGrid)
+											//, 50
+											);
+
+		//public static readonly BindableProperty ColumnSpacingProperty =
+		//	BindableProperty.Create<DataGrid,double>(
+		//		p => p.ColumnSpacing, 2);
 
 		public double ColumnSpacing {
 			get { return (double)GetValue(ColumnSpacingProperty); }
 			set { SetValue(ColumnSpacingProperty, value); } // TODO disallow invalid values
 		}
 
-		public static readonly BindableProperty ColumnsProperty =
-			BindableProperty.Create<DataGrid,IList<Column>>(
-				p => p.Columns, null);
+
+		public static readonly
+		BindableProperty
+		ColumnsProperty = BindableProperty
+								.Create
+									(
+										nameof(Columns)
+										, typeof(IList<Column>)
+										, typeof(DataGrid)
+									//, 50
+									);
+
+		//public static readonly BindableProperty ColumnsProperty =
+		//	BindableProperty.Create<DataGrid,IList<Column>>(
+		//		p => p.Columns, null);
 
 		public IList<Column> Columns {
 			get { return (IList<Column>)GetValue(ColumnsProperty); }
 			set { SetValue(ColumnsProperty, value); }
 		}
 
-		public static readonly BindableProperty RowsProperty =
-			BindableProperty.Create<DataGrid,IList<object>>(
-				p => p.Rows, null);
+		//public static readonly BindableProperty RowsProperty =
+		//	BindableProperty.Create<DataGrid,IList<object>>(
+		//		p => p.Rows, null);
+
+
+		public static readonly
+		BindableProperty
+		RowsProperty = BindableProperty
+								.Create
+									(
+										nameof(Rows)
+										, typeof(IList<object>)
+										, typeof(DataGrid)
+									//, 50
+									);
 
 		public IList<object> Rows {
 			get { return (IList<object>)GetValue(RowsProperty); }
 			set { SetValue(RowsProperty, value); }
 		}
 
-		public static readonly BindableProperty FrozenColumnProperty =
-			BindableProperty.Create<DataGrid,Column>(
-				p => p.FrozenColumn, null);
+		//public static readonly BindableProperty FrozenColumnProperty =
+		//	BindableProperty.Create<DataGrid,Column>(
+		//		p => p.FrozenColumn, null);
+
+		public static readonly
+			BindableProperty
+			FrozenColumnProperty = BindableProperty
+									.Create
+										(
+											nameof(FrozenColumn)
+											, typeof(Column)
+											, typeof(DataGrid)
+										//, 50
+										);
 
 		public Column FrozenColumn {
 			get { return (Column)GetValue(FrozenColumnProperty); }
 			set { SetValue(FrozenColumnProperty, value); }
 		}
 
-		public static readonly BindableProperty HeaderHeightProperty =
-			BindableProperty.Create<DataGrid,double>(
-				p => p.HeaderHeight, 50);
+		//public static readonly BindableProperty HeaderHeightProperty =
+		//	BindableProperty.Create<DataGrid,double>(
+		//		p => p.HeaderHeight, 50);
+
+		public static readonly
+	BindableProperty
+	HeaderHeightProperty = BindableProperty
+							.Create
+								(
+									nameof(HeaderHeight)
+									, typeof(double)
+									, typeof(DataGrid)
+								//, 50
+								);
 
 		public double HeaderHeight {
 			get { return (double)GetValue(HeaderHeightProperty); }
 			set { SetValue(HeaderHeightProperty, value); } // TODO disallow invalid values
 		}
 
-		public static readonly BindableProperty SelectionModeProperty =
-			BindableProperty.Create<DataGrid, SelMode>(
-				p => p.SelectionMode, SelMode.None);
+		//public static readonly BindableProperty SelectionModeProperty =
+		//	BindableProperty.Create<DataGrid, SelMode>(
+		//		p => p.SelectionMode, SelMode.None);
+
+		public static readonly
+BindableProperty
+SelectionModeProperty = BindableProperty
+						.Create
+							(
+								nameof(SelectionMode)
+								, typeof(SelMode)
+								, typeof(DataGrid)
+							//, 50
+							);
 
 		public SelMode SelectionMode
 		{
@@ -1289,9 +1410,20 @@ namespace Zumero
 			set { SetValue(SelectionModeProperty, value); }
 		}
 
-		public static readonly BindableProperty SelectedBackgroundColorProperty =
-			BindableProperty.Create<DataGrid, Color>(
-				p => p.SelectedBackgroundColor, Color.Accent);
+		//public static readonly BindableProperty SelectedBackgroundColorProperty =
+		//	BindableProperty.Create<DataGrid, Color>(
+		//		p => p.SelectedBackgroundColor, Color.Accent);
+
+		public static readonly
+BindableProperty
+SelectedBackgroundColorProperty = BindableProperty
+				.Create
+					(
+						nameof(SelectedBackgroundColor)
+						, typeof(Color)
+						, typeof(DataGrid)
+					//, 50
+					);
 
 		public Color SelectedBackgroundColor
 		{
@@ -1299,9 +1431,21 @@ namespace Zumero
 			set { SetValue(SelectedBackgroundColorProperty, value); }
 		}
 
-		public static readonly BindableProperty UnselectedBackgroundColorProperty =
-			BindableProperty.Create<DataGrid, Color>(
-				p => p.UnselectedBackgroundColor, Color.White);
+		//public static readonly BindableProperty UnselectedBackgroundColorProperty =
+		//	BindableProperty.Create<DataGrid, Color>(
+		//		p => p.UnselectedBackgroundColor, Color.White);
+
+
+		public static readonly
+BindableProperty
+UnselectedBackgroundColorProperty = BindableProperty
+		.Create
+			(
+				nameof(UnselectedBackgroundColor)
+				, typeof(Color)
+				, typeof(DataGrid)
+			//, 50
+			);
 
 		public Color UnselectedBackgroundColor
 		{
@@ -1312,9 +1456,21 @@ namespace Zumero
 		// the following property only makes sense when SelectionMode is
 		// SelMode.Row, or some other future mode which allows selection
 		// of at most one row.
-		public static readonly BindableProperty SelectedRowIndexProperty =
-			BindableProperty.Create<DataGrid, int>(
-				p => p.SelectedRowIndex, -1);
+		//public static readonly BindableProperty SelectedRowIndexProperty =
+		//	BindableProperty.Create<DataGrid, int>(
+		//		p => p.SelectedRowIndex, -1);
+
+		public static readonly
+BindableProperty
+SelectedRowIndexProperty = BindableProperty
+		.Create
+			(
+				nameof(SelectedRowIndex)
+				, typeof(int)
+				, typeof(DataGrid)
+			//, 50
+			);
+
 
 		public int SelectedRowIndex
 		{
