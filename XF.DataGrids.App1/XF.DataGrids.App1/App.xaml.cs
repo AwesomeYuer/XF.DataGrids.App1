@@ -21,9 +21,9 @@ namespace XF.DataGrids.App1
 				, HorizontalOptions = LayoutOptions.FillAndExpand
 				, BackgroundColor = Color.White
 				, RowHeight = 50
-				, RowSpacing = 2
-				, ColumnSpacing = 2
-				,
+				, RowSpacing = 1
+				, ColumnSpacing = 1
+				, HeaderHeight = 200
 			};
 
 			dg.Columns = new ObservableCollection<Column>
@@ -34,18 +34,19 @@ namespace XF.DataGrids.App1
 					, HeaderView = new Label
 					{
 						Text = "English"
-						, BackgroundColor = Color.Gray
+						, BackgroundColor = Color.Green
 						, HorizontalTextAlignment = TextAlignment.Center
 						, VerticalTextAlignment = TextAlignment.Center
-						,
+					
 					}
+					
 					, Template = new DataTemplate
 					(
 						() =>
 						{
 							var v = new Label
 							{ 
-								  BackgroundColor = Color.White
+								  BackgroundColor = Color.Green
 								, TextColor = Color.Black
 								, HorizontalTextAlignment = TextAlignment.Center
 								, VerticalTextAlignment = TextAlignment.Center
@@ -60,34 +61,38 @@ namespace XF.DataGrids.App1
 					Width = 100,
 					HeaderView = new Label {
 						Text = "Spanish",
-						BackgroundColor = Color.Gray,
+						BackgroundColor = Color.Green,
 						HorizontalTextAlignment = TextAlignment.Center,
 						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
 							TextColor = Color.Black,
+							BackgroundColor = Color.Green,
 							HorizontalTextAlignment = TextAlignment.Center,
 							VerticalTextAlignment = TextAlignment.Center,
 						};
 						v.SetBinding(Label.TextProperty, "Spanish");
-						v.SetBinding(Label.BackgroundColorProperty, "SpanishBackgroundColor");
+						//v.SetBinding(Label.BackgroundColorProperty, "SpanishBackgroundColor");
 						return v;
 					}),
-				},
-				new Column {
-					Width = 100,
-					Template = new DataTemplate (() => {
-						var v = new Image();
-						v.SetBinding(Image.SourceProperty, "ImageName");
-						return v;
-					}),
-				},
+				}
+				//,
+				//new Column
+				//{
+				//	Width = 100,
+				//	Template = new DataTemplate (() => {
+				//		var v = new Image();
+				//		v.SetBinding(Image.SourceProperty, "ImageName");
+				//		return v;
+				//	}),
+				//}
+				,
 				new Column {
 					Width = 200,
 					HeaderView = new Label {
 						Text = "Button",
-						BackgroundColor = Color.Gray,
+						BackgroundColor = Color.Green,
 						HorizontalTextAlignment = TextAlignment.Center,
 						VerticalTextAlignment = TextAlignment.Center,
 					},
@@ -111,7 +116,9 @@ namespace XF.DataGrids.App1
 						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
+						
 						var v = new Entry();
+						v.BackgroundColor = Color.Green;
 						v.SetBinding(Entry.TextProperty, "X");
 						return v;
 					}),
@@ -126,7 +133,7 @@ namespace XF.DataGrids.App1
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
-							BackgroundColor = Color.White,
+							BackgroundColor = Color.Green,
 							TextColor = Color.Black,
 							HorizontalTextAlignment = TextAlignment.Center,
 							VerticalTextAlignment = TextAlignment.Center,
@@ -148,7 +155,7 @@ namespace XF.DataGrids.App1
 				Template = new DataTemplate(() => {
 					var v = new Label
 					{
-						BackgroundColor = Color.Gray,
+						BackgroundColor = Color.Green,
 						TextColor = Color.Black,
 						HorizontalTextAlignment = TextAlignment.Center,
 						VerticalTextAlignment = TextAlignment.Center,
