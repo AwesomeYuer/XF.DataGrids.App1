@@ -151,6 +151,7 @@ namespace XF.DataGrids.App1
 				{
 					Text = "Corner",
 					BackgroundColor = Color.Yellow,
+					//HeightRequest = dg.RowHeight - dg.RowSpacing - dg.RowSpacing
 				},
 				Template = new DataTemplate(() => {
 					var v = new Label
