@@ -176,13 +176,19 @@ namespace XF.DataGrids.App1
 			//return;
 
 
-			MainPage = new ContentPage
+			//MainPage = new ContentPage
+			//{
+			//	Content = dg
+			//};
+			//dg = null;
+
+			pages["Test Frozen Column, Button Column, Entry Column"] = new ContentPage
 			{
 				Content = dg
 			};
 			dg = null;
 
-			return;
+			//return;
 
 			pages["Test Xaml"] = new MainPage();
 

@@ -460,8 +460,7 @@ namespace Microshaoft
                 for (int i = 0; i < count; i++)
                 {
                     int row = start + i;
-                    View v;
-                    if (rowsForThisCol.TryGetValue(row, out v))
+                    if (rowsForThisCol.TryGetValue(row, out View v))
                     {
                         setBindingContext(v, getDataForCell(col, row));
                         fixSelection(v, col, row);
@@ -525,15 +524,13 @@ namespace Microshaoft
         {
             // no changes to size or position of cells
 
-            List<View> inventoryForThisColumn;
-            if (cellInventoryByColumn.TryGetValue(col, out inventoryForThisColumn))
+            if (cellInventoryByColumn.TryGetValue(col, out List<View> inventoryForThisColumn))
             {
                 foreach (View v in inventoryForThisColumn)
                 {
                     setBindingContext(v, null);
-                    CoordPair t;
                     // assert t.Item1 == col
-                    if (boundViewToCoords.TryGetValue(v, out t))
+                    if (boundViewToCoords.TryGetValue(v, out CoordPair t))
                     {
                         coordsToBoundView[t.ColumnX].Remove(t.RowY);
                         boundViewToCoords.Remove(v);
@@ -587,8 +584,7 @@ namespace Microshaoft
         private void layoutVisibleCellsInOneColumn(int col)
         {
             myLayout panel = (col < 0) ? frozenColumnPanel : mainPanel;
-            Dictionary<int, View> rows;
-            if (coordsToBoundView.TryGetValue(col, out rows))
+            if (coordsToBoundView.TryGetValue(col, out Dictionary<int, View> rows))
             {
                 foreach (int row in rows.Keys)
                 {
@@ -777,8 +773,7 @@ namespace Microshaoft
 
         private bool getBoundViewForCoords(int col, int row, out View v)
         {
-            Dictionary<int, View> d;
-            if (!coordsToBoundView.TryGetValue(col, out d))
+            if (!coordsToBoundView.TryGetValue(col, out Dictionary<int, View> d))
             {
                 v = null;
                 return false;
@@ -788,8 +783,7 @@ namespace Microshaoft
 
         private View findAvailableCellView(int col)
         {
-            List<View> vlist;
-            if (!cellInventoryByColumn.TryGetValue(col, out vlist))
+            if (!cellInventoryByColumn.TryGetValue(col, out List<View> vlist))
             {
                 vlist = new List<View>();
                 cellInventoryByColumn[col] = vlist;
@@ -915,9 +909,7 @@ namespace Microshaoft
 
         private Rectangle frozenColumnGetBox(View v)
         {
-            int col;
-            int row;
-            if (getCoordsForBoundView(v, out col, out row))
+            if (getCoordsForBoundView(v, out int col, out int row))
             {
                 // assert col == -1
                 double x = 0;
@@ -959,9 +951,8 @@ namespace Microshaoft
         {
             for (int row = row_first; row <= row_last; row++)
             {
-                View v;
 
-                if (getBoundViewForCoords(col, row, out v))
+                if (getBoundViewForCoords(col, row, out View v))
                 {
                     // v should already be prepped
                 }
@@ -1005,13 +996,16 @@ namespace Microshaoft
             foreach (var col in coordsToBoundView.Keys)
             {
                 var rowsForThisColumn = coordsToBoundView[col];
-                if (
-                    (col >= 0)
-                    && (
-                        (col < col_first)
-                        || (col > col_last)
+                if 
+                    (
+                        (col >= 0)
+                        &&
+                        (
+                            (col < col_first)
+                            ||
+                            (col > col_last)
+                        )
                     )
-                )
                 {
                     // everything in this column is invisible.
                     foreach (var row in rowsForThisColumn.Keys)
@@ -1068,10 +1062,12 @@ namespace Microshaoft
 
         private void my_SetContentOffset(double x, double y)
         {
-            if (
-                (ContentOffset_X != x)
-                || (ContentOffset_Y != y)
-            )
+            if
+                (
+                    (ContentOffset_X != x)
+                    ||
+                    (ContentOffset_Y != y)
+                )
             {
                 ContentOffset_X = x;
                 ContentOffset_Y = y;
@@ -1150,7 +1146,12 @@ namespace Microshaoft
         {
             for (int col = 0; col < cachedColumnEdges.Length; col++)
             {
-                if ((cachedColumnEdges[col] + getColumnWidthPlusSpacing(col)) > left)
+                if
+                    (
+                        (cachedColumnEdges[col] + getColumnWidthPlusSpacing(col))
+                        >
+                        left
+                    )
                 {
                     return col;
                 }
@@ -1175,12 +1176,13 @@ namespace Microshaoft
             return last;
         }
 
-        private void calcVisibleColumns(
-            double left,
-            double width,
-            out int first,
-            out int last
-        )
+        private void calcVisibleColumns
+                            (
+                                double left,
+                                double width,
+                                out int first,
+                                out int last
+                            )
         {
             // assert left >= 0
 
@@ -1196,12 +1198,13 @@ namespace Microshaoft
             last = findLastVisibleColumn(first, left + width);
         }
 
-        private void calcVisibleRows(
-            double top,
-            double height,
-            out int first,
-            out int last
-        )
+        private void calcVisibleRows
+                        (
+                            double top,
+                            double height,
+                            out int first,
+                            out int last
+                        )
         {
             // assert top >= 0
 
@@ -1602,15 +1605,15 @@ namespace Microshaoft
         //		p => p.HeaderHeight, 50);
 
         public static readonly
-    BindableProperty
-    HeaderHeightProperty = BindableProperty
-                            .Create
-                                (
-                                    nameof(HeaderHeight)
-                                    , typeof(double)
-                                    , typeof(DataGrid)
-                                //, 50
-                                );
+            BindableProperty
+            HeaderHeightProperty = BindableProperty
+                                    .Create
+                                        (
+                                            nameof(HeaderHeight)
+                                            , typeof(double)
+                                            , typeof(DataGrid)
+                                        //, 50
+                                        );
 
         public double HeaderHeight
         {
@@ -1623,15 +1626,15 @@ namespace Microshaoft
         //		p => p.SelectionMode, SelMode.None);
 
         public static readonly
-BindableProperty
-SelectionModeProperty = BindableProperty
-                        .Create
-                            (
-                                nameof(SelectionMode)
-                                , typeof(SelectionModeEnum)
-                                , typeof(DataGrid)
-                            //, 50
-                            );
+                BindableProperty
+                SelectionModeProperty = BindableProperty
+                                        .Create
+                                            (
+                                                nameof(SelectionMode)
+                                                , typeof(SelectionModeEnum)
+                                                , typeof(DataGrid)
+                                            //, 50
+                                            );
 
         public SelectionModeEnum SelectionMode
         {
@@ -1644,15 +1647,15 @@ SelectionModeProperty = BindableProperty
         //		p => p.SelectedBackgroundColor, Color.Accent);
 
         public static readonly
-BindableProperty
-SelectedBackgroundColorProperty = BindableProperty
-                .Create
-                    (
-                        nameof(SelectedBackgroundColor)
-                        , typeof(Color)
-                        , typeof(DataGrid)
-                    //, 50
-                    );
+                    BindableProperty
+                    SelectedBackgroundColorProperty = BindableProperty
+                                    .Create
+                                        (
+                                            nameof(SelectedBackgroundColor)
+                                            , typeof(Color)
+                                            , typeof(DataGrid)
+                                        //, 50
+                                        );
 
         public Color SelectedBackgroundColor
         {
@@ -1666,15 +1669,15 @@ SelectedBackgroundColorProperty = BindableProperty
 
 
         public static readonly
-BindableProperty
-UnselectedBackgroundColorProperty = BindableProperty
-        .Create
-            (
-                nameof(UnselectedBackgroundColor)
-                , typeof(Color)
-                , typeof(DataGrid)
-            //, 50
-            );
+                        BindableProperty
+                        UnselectedBackgroundColorProperty = BindableProperty
+                                .Create
+                                    (
+                                        nameof(UnselectedBackgroundColor)
+                                        , typeof(Color)
+                                        , typeof(DataGrid)
+                                    //, 50
+                                    );
 
         public Color UnselectedBackgroundColor
         {
@@ -1690,15 +1693,15 @@ UnselectedBackgroundColorProperty = BindableProperty
         //		p => p.SelectedRowIndex, -1);
 
         public static readonly
-BindableProperty
-SelectedRowIndexProperty = BindableProperty
-        .Create
-            (
-                nameof(SelectedRowIndex)
-                , typeof(int)
-                , typeof(DataGrid)
-            //, 50
-            );
+                            BindableProperty
+                            SelectedRowIndexProperty = BindableProperty
+                                    .Create
+                                        (
+                                            nameof(SelectedRowIndex)
+                                            , typeof(int)
+                                            , typeof(DataGrid)
+                                        //, 50
+                                        );
 
 
         public int SelectedRowIndex
