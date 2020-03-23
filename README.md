@@ -1,6 +1,6 @@
 # XF.DataGrids.App1
 
-Frozen Header row and Column
+Frozen Header row and Column (Android Only)
 
 reference by 
 
