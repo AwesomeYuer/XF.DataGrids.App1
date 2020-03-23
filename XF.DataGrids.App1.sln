@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XF.DataGrids.App1.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XF.DataGrids.App1.iOS", "XF.DataGrids.App1\XF.DataGrids.App1.iOS\XF.DataGrids.App1.iOS.csproj", "{54584695-0A36-4092-8B89-6E44C22326EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XF.DataGrids.App1", "XF.DataGrids.App1\XF.DataGrids.App1\XF.DataGrids.App1.csproj", "{E502C3C7-886B-4AEC-B047-7E3BAE833673}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XF.DataGrids.App1", "XF.DataGrids.App1\XF.DataGrids.App1\XF.DataGrids.App1.csproj", "{E502C3C7-886B-4AEC-B047-7E3BAE833673}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CFA8CF09-95AA-46B5-B51B-3E12A17B1870}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

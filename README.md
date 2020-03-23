@@ -1,5 +1,7 @@
 # XF.DataGrids.App1
 
+Frozen Header row and Column
+
 reference by 
 
 https://github.com/zumero/DataGrid
