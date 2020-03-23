@@ -33,15 +33,15 @@ namespace XF.DataGrids.App1
 					HeaderView = new Label {
 						Text = "English",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
 							BackgroundColor = Color.White,
 							TextColor = Color.Black,
-							XAlign = TextAlignment.Center,
-							YAlign = TextAlignment.Center,
+							HorizontalTextAlignment = TextAlignment.Center,
+							VerticalTextAlignment = TextAlignment.Center,
 						};
 						v.SetBinding(Label.TextProperty, "English");
 						return v;
@@ -52,14 +52,14 @@ namespace XF.DataGrids.App1
 					HeaderView = new Label {
 						Text = "Spanish",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
 							TextColor = Color.Black,
-							XAlign = TextAlignment.Center,
-							YAlign = TextAlignment.Center,
+							HorizontalTextAlignment = TextAlignment.Center,
+							VerticalTextAlignment = TextAlignment.Center,
 						};
 						v.SetBinding(Label.TextProperty, "Spanish");
 						v.SetBinding(Label.BackgroundColorProperty, "SpanishBackgroundColor");
@@ -79,8 +79,8 @@ namespace XF.DataGrids.App1
 					HeaderView = new Label {
 						Text = "Button",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new myButton {
@@ -98,8 +98,8 @@ namespace XF.DataGrids.App1
 					HeaderView = new Label {
 						Text = "X",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Entry();
@@ -112,15 +112,15 @@ namespace XF.DataGrids.App1
 					HeaderView = new Label {
 						Text = "X*2",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
 							BackgroundColor = Color.White,
 							TextColor = Color.Black,
-							XAlign = TextAlignment.Center,
-							YAlign = TextAlignment.Center,
+							HorizontalTextAlignment = TextAlignment.Center,
+							VerticalTextAlignment = TextAlignment.Center,
 						};
 						v.SetBinding(Label.TextProperty, "DoubleX");
 						return v;
@@ -141,8 +141,8 @@ namespace XF.DataGrids.App1
 					{
 						BackgroundColor = Color.Gray,
 						TextColor = Color.Black,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					};
 					v.SetBinding(Label.TextProperty, "Spanish");
 					return v;
@@ -254,15 +254,15 @@ namespace XF.DataGrids.App1
 							HeaderView = new Label {
 								Text = "X",
 								BackgroundColor = Color.Gray,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.White,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.Center,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.Center,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding (Label.TextProperty, "X");
 								return v;
@@ -273,15 +273,15 @@ namespace XF.DataGrids.App1
 							HeaderView = new Label {
 								Text = "X^2",
 								BackgroundColor = Color.Gray,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.White,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.Center,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.Center,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding (Label.TextProperty, "XSquared");
 								return v;
@@ -292,8 +292,8 @@ namespace XF.DataGrids.App1
 							HeaderView = new Label {
 								Text = "Slider",
 								BackgroundColor = Color.Gray,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Slider {
@@ -342,15 +342,15 @@ namespace XF.DataGrids.App1
 							HeaderView = new Label {
 								Text = "X",
 								BackgroundColor = Color.Gray,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.White,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.End,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.End,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding (Label.TextProperty, "X");
 								return v;
@@ -361,15 +361,15 @@ namespace XF.DataGrids.App1
 							HeaderView = new Label {
 								Text = "Sqrt(X)",
 								BackgroundColor = Color.Gray,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.White,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.End,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.End,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding (Label.TextProperty, "Sqrt");
 								return v;

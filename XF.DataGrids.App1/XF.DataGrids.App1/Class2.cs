@@ -15,16 +15,17 @@
 */
 
 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
-using Xamarin.Forms;
-
-using Zumero;
-
 namespace demo
 {
+
+
+	using System;
+	using System.Collections.Generic;
+	using System.Collections.ObjectModel;
+
+	using Xamarin.Forms;
+
+	using Zumero;
 	public static class testData
 	{
 		public static IList<Column> createTwoSimpleColumns()
@@ -35,15 +36,15 @@ namespace demo
 					HeaderView = new Label {
 						Text = "English",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
 							BackgroundColor = Color.White,
 							TextColor = Color.Black,
-							XAlign = TextAlignment.Center,
-							YAlign = TextAlignment.Center,
+							HorizontalTextAlignment = TextAlignment.Center,
+							VerticalTextAlignment = TextAlignment.Center,
 						};
 						v.SetBinding (Label.TextProperty, "English");
 						return v;
@@ -54,15 +55,15 @@ namespace demo
 					HeaderView = new Label {
 						Text = "Spanish",
 						BackgroundColor = Color.Gray,
-						XAlign = TextAlignment.Center,
-						YAlign = TextAlignment.Center,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
 					},
 					Template = new DataTemplate (() => {
 						var v = new Label {
 							BackgroundColor = Color.White,
 							TextColor = Color.Black,
-							XAlign = TextAlignment.Center,
-							YAlign = TextAlignment.Center,
+							HorizontalTextAlignment = TextAlignment.Center,
+							VerticalTextAlignment = TextAlignment.Center,
 						};
 						v.SetBinding (Label.TextProperty, "Spanish");
 						return v;
@@ -224,8 +225,8 @@ namespace demo
 								var v = new Label {
 									BackgroundColor = Color.Gray,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.Center,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.Center,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding(Label.TextProperty, "English");
 								return v;
@@ -357,8 +358,8 @@ namespace demo
 							var v = new Label {
 								BackgroundColor = Color.Maroon,
 								TextColor = Color.Black,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							};
 							v.SetBinding(Label.TextProperty, "English");
 							return v;
@@ -376,15 +377,15 @@ namespace demo
 							HeaderView = new Label {
 								Text = "Ingles",
 								BackgroundColor = Color.Purple,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.Pink,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.Center,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.Center,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding(Label.TextProperty, "English");
 								return v;
@@ -403,15 +404,15 @@ namespace demo
 							HeaderView = new Label {
 								Text = "Ingles",
 								BackgroundColor = Color.Purple,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.Pink,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.Center,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.Center,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding(Label.TextProperty, "English");
 								return v;
@@ -431,15 +432,15 @@ namespace demo
 							HeaderView = new Label {
 								Text = "CRNR",
 								BackgroundColor = Color.Purple,
-								XAlign = TextAlignment.Center,
-								YAlign = TextAlignment.Center,
+								HorizontalTextAlignment = TextAlignment.Center,
+								VerticalTextAlignment = TextAlignment.Center,
 							},
 							Template = new DataTemplate (() => {
 								var v = new Label {
 									BackgroundColor = Color.Pink,
 									TextColor = Color.Black,
-									XAlign = TextAlignment.Center,
-									YAlign = TextAlignment.Center,
+									HorizontalTextAlignment = TextAlignment.Center,
+									VerticalTextAlignment = TextAlignment.Center,
 								};
 								v.SetBinding(Label.TextProperty, "DoubleX");
 								return v;

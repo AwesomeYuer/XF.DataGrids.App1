@@ -99,8 +99,8 @@ namespace Zumero
 			boundViewToCoords = new Dictionary<View, CoordPair> ();
 
 			container = new AbsoluteLayout ();
-            if (Device.OS != TargetPlatform.Windows &&
-                Device.OS != TargetPlatform.WinPhone)
+            if (Device.RuntimePlatform != Device.Android &&
+                Device.RuntimePlatform != Device.UWP)
             {
                 //Setting these flags was causing problems 
                 frozenRowPanel.IsClippedToBounds = true;
