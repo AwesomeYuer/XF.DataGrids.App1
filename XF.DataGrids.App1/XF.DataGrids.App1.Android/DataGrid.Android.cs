@@ -25,10 +25,11 @@ using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.App;
+using Microshaoft;
 
-[assembly: Xamarin.Forms.ExportRenderer(typeof(Zumero.DataGrid), typeof(Zumero.DataGridRenderer))]
+[assembly: Xamarin.Forms.ExportRenderer(typeof(DataGrid), typeof(DataGridRenderer))]
 
-namespace Zumero
+namespace Microshaoft
 {
     public class DataGridComponent
     {
@@ -37,16 +38,16 @@ namespace Zumero
         }
     }
 
-    public class DataGridRenderer : VisualElementRenderer<Zumero.DataGrid>
+    public class DataGridRenderer : VisualElementRenderer<DataGrid>
     {
-        public DataGridRenderer() : base()
+        public DataGridRenderer(Context context) : base(context)
         {
             ViewConfiguration configuration = ViewConfiguration.Get(this.Context);
             mTouchSlop = configuration.ScaledTouchSlop;
         }
 
 
-        private DataGrid tab // TODO
+        private DataGrid Tab // TODO
         {
             get
             {
@@ -94,7 +95,7 @@ namespace Zumero
                         mLastMotionX = mFirstMotionX = e.GetX();
                         mLastMotionY = mFirstMotionY = e.GetY();
 
-                        tab.GetContentOffset(out _began_x, out _began_y);
+                        Tab.GetContentOffset(out _began_x, out _began_y);
                         break;
                     }
 
@@ -124,7 +125,7 @@ namespace Zumero
                         mLastMotionY = e.GetY();
                         mLastMotionX = e.GetX();
 
-                        tab.GetContentOffset(out _began_x, out _began_y);
+                        Tab.GetContentOffset(out _began_x, out _began_y);
 
                         break;
                     }
@@ -155,7 +156,7 @@ namespace Zumero
                         mLastMotionY = y;
                         mLastMotionX = x;
 
-                        tab.SetContentOffset(newx, newy);
+                        Tab.SetContentOffset(newx, newy);
                     }
                     break;
                 case MotionEventActions.Up:
@@ -171,7 +172,7 @@ namespace Zumero
                         double touch_x = Xamarin.Forms.Platform.Android.ContextExtensions.FromPixels(this.Context, e.GetX());
                         double touch_y = Xamarin.Forms.Platform.Android.ContextExtensions.FromPixels(this.Context, e.GetY());
 
-                        tab.SingleTap(touch_x, touch_y); // TODO shouldn't we use the return value of this call?
+                        Tab.SingleTap(touch_x, touch_y); // TODO shouldn't we use the return value of this call?
                     }
                     break;
                 case MotionEventActions.Cancel:

@@ -25,8 +25,8 @@ namespace demo
 
 	using Xamarin.Forms;
 
-	using Zumero;
-	public static class testData
+	using Microshaoft;
+	public static class TestData
 	{
 		public static IList<Column> createTwoSimpleColumns()
 		{

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Zumero;
+using Microshaoft;
 
 namespace XF.DataGrids.App1
 {
@@ -15,37 +15,46 @@ namespace XF.DataGrids.App1
 		{
 			InitializeComponent();
 
-			var dg = new Zumero.DataGrid
+			var dg = new DataGrid
 			{
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-
-				BackgroundColor = Color.Black,
-
-				RowHeight = 50,
-				RowSpacing = 2,
-				ColumnSpacing = 2,
+				  VerticalOptions = LayoutOptions.FillAndExpand
+				, HorizontalOptions = LayoutOptions.FillAndExpand
+				, BackgroundColor = Color.White
+				, RowHeight = 50
+				, RowSpacing = 2
+				, ColumnSpacing = 2
+				,
 			};
 
-			dg.Columns = new ObservableCollection<Column> {
-				new Column {
-					Width = 100,
-					HeaderView = new Label {
-						Text = "English",
-						BackgroundColor = Color.Gray,
-						HorizontalTextAlignment = TextAlignment.Center,
-						VerticalTextAlignment = TextAlignment.Center,
-					},
-					Template = new DataTemplate (() => {
-						var v = new Label {
-							BackgroundColor = Color.White,
-							TextColor = Color.Black,
-							HorizontalTextAlignment = TextAlignment.Center,
-							VerticalTextAlignment = TextAlignment.Center,
-						};
-						v.SetBinding(Label.TextProperty, "English");
-						return v;
-					}),
+			dg.Columns = new ObservableCollection<Column>
+			{
+				new Column
+				{
+					Width = 100
+					, HeaderView = new Label
+					{
+						Text = "English"
+						, BackgroundColor = Color.Gray
+						, HorizontalTextAlignment = TextAlignment.Center
+						, VerticalTextAlignment = TextAlignment.Center
+						,
+					}
+					, Template = new DataTemplate
+					(
+						() =>
+						{
+							var v = new Label
+							{ 
+								  BackgroundColor = Color.White
+								, TextColor = Color.Black
+								, HorizontalTextAlignment = TextAlignment.Center
+								, VerticalTextAlignment = TextAlignment.Center
+								,
+							};
+							v.SetBinding(Label.TextProperty, "English");
+							return v;
+						}
+					),
 				},
 				new Column {
 					Width = 100,
@@ -152,19 +161,26 @@ namespace XF.DataGrids.App1
 			dg.HeaderHeight = 50;
 			//dg.SelectionMode = SelMode.Row;
 
-			dg.Rows = testData.createLotsOfWordPairsWithButtons(dg);
+			dg.Rows = TestData.createLotsOfWordPairsWithButtons(dg);
 
-			pages["Test 4"] = new ContentPage
+
+			//MainPage = new MainPage();
+			//return;
+
+
+			MainPage = new ContentPage
 			{
 				Content = dg
 			};
 			dg = null;
 
+			return;
+
 			pages["Test Xaml"] = new MainPage();
 
 			pages["No Columns, No Rows"] = new ContentPage
 			{
-				Content = new Zumero.DataGrid
+				Content = new Microshaoft.DataGrid
 				{
 					VerticalOptions = LayoutOptions.FillAndExpand,
 					HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -180,7 +196,7 @@ namespace XF.DataGrids.App1
 
 			pages["No Columns, Four Rows"] = new ContentPage
 			{
-				Content = new Zumero.DataGrid
+				Content = new Microshaoft.DataGrid
 				{
 					VerticalOptions = LayoutOptions.FillAndExpand,
 					HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -192,13 +208,13 @@ namespace XF.DataGrids.App1
 					ColumnSpacing = 2,
 					HeaderHeight = 50,
 
-					Rows = testData.createFourSimpleWordPairs(),
+					Rows = TestData.createFourSimpleWordPairs(),
 				}
 			};
 
 			pages["Two Columns, Four Rows"] = new ContentPage
 			{
-				Content = new Zumero.DataGrid
+				Content = new Microshaoft.DataGrid
 				{
 					VerticalOptions = LayoutOptions.FillAndExpand,
 					HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -210,14 +226,14 @@ namespace XF.DataGrids.App1
 					ColumnSpacing = 2,
 					HeaderHeight = 50,
 
-					Columns = testData.createTwoSimpleColumns(),
-					Rows = testData.createFourSimpleWordPairs(),
+					Columns = TestData.createTwoSimpleColumns(),
+					Rows = TestData.createFourSimpleWordPairs(),
 				}
 			};
 
 			pages["Two Columns, No Rows"] = new ContentPage
 			{
-				Content = new Zumero.DataGrid
+				Content = new Microshaoft.DataGrid
 				{
 					VerticalOptions = LayoutOptions.FillAndExpand,
 					HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -229,14 +245,14 @@ namespace XF.DataGrids.App1
 					ColumnSpacing = 2,
 					HeaderHeight = 50,
 
-					Columns = testData.createTwoSimpleColumns(),
+					Columns = TestData.createTwoSimpleColumns(),
 				}
 			};
 
 			pages["XSquared"] =
 			new ContentPage
 			{
-				Content = new Zumero.DataGrid
+				Content = new Microshaoft.DataGrid
 				{
 					VerticalOptions = LayoutOptions.FillAndExpand,
 					HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -322,7 +338,7 @@ namespace XF.DataGrids.App1
 			pages["Million"] =
 				new ContentPage
 				{
-					Content = new Zumero.DataGrid
+					Content = new Microshaoft.DataGrid
 					{
 						VerticalOptions = LayoutOptions.FillAndExpand,
 						HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -334,7 +350,7 @@ namespace XF.DataGrids.App1
 						ColumnSpacing = 2,
 						HeaderHeight = 40,
 
-						SelectionMode = SelMode.Row,
+						SelectionMode = SelectionModeEnum.Row,
 
 						Columns = new ObservableCollection<Column> {
 						new Column {

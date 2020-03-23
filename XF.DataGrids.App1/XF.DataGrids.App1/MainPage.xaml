@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:dg="clr-namespace:Zumero;assembly=XF.DataGrids.App1"
+             xmlns:dg="clr-namespace:Microshaoft;assembly=XF.DataGrids.App1"
              mc:Ignorable="d"
              x:Class="XF.DataGrids.App1.MainPage">
 
