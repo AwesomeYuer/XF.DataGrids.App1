@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dg="clr-namespace:Zumero;assembly=XF.DataGrids.App1"
+             mc:Ignorable="d"
+             x:Class="XF.DataGrids.App1.MainPage">
+
+    <dg:DataGrid x:Name="datagrid" SelectionMode="Row" BackgroundColor="Black" ColumnSpacing="2" RowSpacing="2" RowHeight="50" HeaderHeight="50">
+
+        <dg:DataGrid.FrozenColumn>
+            <dg:Column Width="80">
+                <dg:Column.HeaderView>
+                    <Label Text="Corner" BackgroundColor="Yellow"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <Label Text="{Binding Spanish}" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+        </dg:DataGrid.FrozenColumn>
+
+        <dg:DataGrid.Columns>
+
+            <dg:Column Width="100">
+                <dg:Column.HeaderView>
+                    <Label Text="English" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <Label Text="{Binding English}" BackgroundColor="White" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+
+            <dg:Column Width="100">
+                <dg:Column.HeaderView>
+                    <Label Text="Spanish" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <Label Text="{Binding Spanish}" BackgroundColor="{Binding SpanishBackgroundColor}" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+
+            <dg:Column Width="100">
+                <dg:Column.HeaderView>
+                    <Label Text="Pic" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <Image Source="{Binding ImageName}"/>
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+
+            <dg:Column Width="200">
+                <dg:Column.HeaderView>
+                    <Label Text="Button" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <!--<a:myButton BackgroundColor="Green" TextColor="White" Font="Bold,18" Text="{Binding ButtonText}" OneAction="{Binding Action}"/>-->
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+
+            <dg:Column Width="100">
+                <dg:Column.HeaderView>
+                    <Label Text="X" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <Entry Text="{Binding X}"></Entry>
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+
+            <dg:Column Width="100">
+                <dg:Column.HeaderView>
+                    <Label Text="X * 2" BackgroundColor="Gray" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                </dg:Column.HeaderView>
+                <dg:Column.Template>
+                    <DataTemplate>
+                        <Label Text="{Binding DoubleX}" BackgroundColor="White" TextColor="Black" XAlign="Center" YAlign="Center"></Label>
+                    </DataTemplate>
+                </dg:Column.Template>
+            </dg:Column>
+        </dg:DataGrid.Columns>
+    </dg:DataGrid>
+
+</ContentPage>
