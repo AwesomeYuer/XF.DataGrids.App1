@@ -352,7 +352,7 @@ namespace XF.DataGrids.App1
 			pages["Million"] =
 				new ContentPage
 				{
-					Content = new Microshaoft.DataGrid
+					Content = new DataGrid
 					{
 						VerticalOptions = LayoutOptions.FillAndExpand,
 						HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -407,7 +407,7 @@ namespace XF.DataGrids.App1
 						},
 					},
 
-						Rows = new myList(1000000),
+						Rows = new DataList(1000000),
 					}
 				};
 
@@ -424,19 +424,6 @@ namespace XF.DataGrids.App1
 			lst.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {
 				nav.PushAsync(pages[e.SelectedItem.ToString()]);
 			};
-
-			MainPage = nav;
-
-
-
-
-
-
-
-
-
-
-
 
 			MainPage = nav;
 		}

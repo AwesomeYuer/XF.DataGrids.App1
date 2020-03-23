@@ -19,32 +19,30 @@ namespace demo
 	using System;
 	using System.Collections;
 	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
 	using System.ComponentModel;
-	using Microshaoft;
 	using Xamarin.Forms;
-	public class myList : IList<object>
+	public class DataList : IList<object>
 	{
-		private class myRow
+		private class DataListRow
 		{
 			private readonly double v;
 
 			public double X { get { return v; } }
 			public double Sqrt { get { return Math.Round(Math.Sqrt(v), 3); } }
 
-			public myRow(double _v) { v = _v; }
+			public DataListRow(double _v) { v = _v; }
 		}
 
 		private readonly int count;
 
-		public myList(int _count)
+		public DataList(int _count)
 		{
 			count = _count;
 		}
 
 		public object this[int index]
 		{
-			get { return new myRow(index); }
+			get { return new DataListRow(index); }
 			set { throw new NotImplementedException(); }
 		}
 
@@ -68,12 +66,12 @@ namespace demo
 		public bool Contains(object item) { throw new NotImplementedException(); }
 		public void CopyTo(object[] array, int arrayIndex) { throw new NotImplementedException(); }
 
-		private class myEnumerator : IEnumerator<object>
+		private class DataListEnumerator : IEnumerator<object>
 		{
 			private int count;
 			private int curIndex;
 
-			public myEnumerator(int _count)
+			public DataListEnumerator(int _count)
 			{
 				count = _count;
 				curIndex = -1;
@@ -97,7 +95,7 @@ namespace demo
 
 			public object Current
 			{
-				get { return new myRow(curIndex); }
+				get { return new DataListRow(curIndex); }
 			}
 
 
@@ -115,7 +113,7 @@ namespace demo
 
 		public IEnumerator<object> GetEnumerator()
 		{
-			return new myEnumerator(count);
+			return new DataListEnumerator(count);
 		}
 
 	}
@@ -184,7 +182,10 @@ namespace demo
 
 		public double XSquared
 		{
-			get { return x * x; }
+			get
+			{
+				return x * x;
+			}
 		}
 
 		public double X
